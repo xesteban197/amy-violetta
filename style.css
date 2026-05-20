@@ -49,7 +49,7 @@ body {
 /* Imagen 1135x1600: botón original está top ~79%, centrado, ancho ~38% de la imagen */
 .confirm-btn {
   position: absolute;
-  top: 82%;
+  top: 81%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -63,7 +63,7 @@ body {
   font-size: clamp(0.6rem, 2vw, 1rem);
   font-weight: 800;
   /* Padding vertical proporcional a la imagen: botón ocupa ~4.5% de la altura */
-  padding: 1.8% 0;
+  padding: 2.8% 0;
   border: none;
   border-radius: 50px;
   cursor: pointer;
