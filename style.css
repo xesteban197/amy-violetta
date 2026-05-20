@@ -77,6 +77,11 @@ body {
   animation: pulse 2.2s ease-in-out infinite;
 }
 
+.confirm-btn:visited {
+  background: #f093b0;
+  color: #c0396b;
+}
+
 .confirm-btn:hover {
   opacity: 0.85;
   transform: translateX(-50%) scale(1.03);
