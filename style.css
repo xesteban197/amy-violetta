@@ -18,23 +18,22 @@ body {
   overflow-y: auto;
 }
 
-/* Tarjeta principal */
+/* Mantiene MISMA escala en desktop y mobile */
 .wrapper {
   position: relative;
-  width: min(520px, 100vw);
-  margin: 0 auto;
+  width: 520px;
+  max-width: 100%;
+  margin: 24px auto;
   border-radius: 16px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 8px 40px rgba(180, 60, 100, 0.25);
   flex-shrink: 0;
 }
 
-/* Imagen completa */
 .bg-image {
   display: block;
   width: 100%;
   height: auto;
-  z-index: 0;
 }
 
 .overlay {
@@ -44,7 +43,6 @@ body {
   z-index: 1;
 }
 
-/* Botón confirmar */
 .confirm-btn {
   position: absolute;
   top: 78%;
@@ -57,10 +55,9 @@ body {
 
   background: #ee7fa3;
   color: #fff;
-  opacity: 1;
 
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(0.7rem, 2vw, 1.1rem);
+  font-size: 1rem;
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -81,13 +78,10 @@ body {
 .confirm-btn:hover,
 .confirm-btn:active,
 .confirm-btn:focus {
-  background: #ee7fa3;
-  color: #fff;
   transform: translateX(-50%) scale(1.03);
   outline: none;
 }
 
-/* Partículas */
 .sparkle {
   position: fixed;
   z-index: 2;
@@ -116,31 +110,15 @@ body {
   }
 }
 
-/* Responsive Mobile */
-@media (max-width: 768px) {
-
-  html,
-  body {
-    padding: 0;
-    margin: 0;
-    align-items: flex-start;
-    background: #f2b8cc;
-  }
-
+/* SOLO escala, no reacomoda */
+@media (max-width: 520px) {
   .wrapper {
-    width: 100vw;
-    max-width: 520px;
-    border-radius: 0;
-    margin: 0 auto;
-  }
-
-  .bg-image {
     width: 100%;
-    height: auto;
+    margin: 0 auto;
+    border-radius: 0;
   }
 
   .confirm-btn {
-    width: 40%;
-    font-size: clamp(0.7rem, 3vw, 1rem);
+    font-size: 0.9rem;
   }
 }
