@@ -45,8 +45,7 @@ body {
   z-index: 1;
 }
 
-/* ── Botón confirmar — alineado exactamente sobre el botón de la imagen ── */
-/* Imagen 1135x1600: botón original está top ~79%, centrado, ancho ~38% de la imagen */
+/* ── Botón confirmar — mismo estilo que el botón de la imagen ── */
 .confirm-btn {
   position: absolute;
   top: 78%;
@@ -54,35 +53,34 @@ body {
   transform: translateX(-50%);
   z-index: 10;
 
-  /* Ancho igual al botón de la imagen (~38% del ancho) */
   width: 38%;
 
-  background: linear-gradient(135deg, #f78fac, #e85c8a);
-  color: white;
-  font-family: 'Nunito', sans-serif;
-  font-size: clamp(0.6rem, 2vw, 1rem);
-  font-weight: 800;
-  /* Padding vertical proporcional a la imagen: botón ocupa ~4.5% de la altura */
+  /* Rosa claro igual al botón original */
+  background: #f4a7bc;
+  /* Texto rosa oscuro subrayado, fuente cursiva Dancing Script */
+  color: #c0396b;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
   padding: 2.8% 0;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  letter-spacing: 0.5px;
   white-space: nowrap;
 
-  /* Sin sombra llamativa para que se vea natural sobre la imagen */
-  box-shadow: 0 4px 16px rgba(232, 92, 138, 0.5);
+  box-shadow: 0 2px 10px rgba(200, 80, 120, 0.2);
   transition: opacity 0.2s, transform 0.2s;
   animation: pulse 2.2s ease-in-out infinite;
 }
 
 .confirm-btn:hover {
-  opacity: 0.9;
+  opacity: 0.85;
   transform: translateX(-50%) scale(1.03);
   animation: none;
 }
@@ -91,11 +89,11 @@ body {
 
   0%,
   100% {
-    box-shadow: 0 4px 16px rgba(232, 92, 138, 0.5);
+    box-shadow: 0 2px 10px rgba(200, 80, 120, 0.2);
   }
 
   50% {
-    box-shadow: 0 6px 28px rgba(232, 92, 138, 0.8);
+    box-shadow: 0 4px 20px rgba(200, 80, 120, 0.4);
   }
 }
 
