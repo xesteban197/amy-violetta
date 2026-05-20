@@ -11,7 +11,7 @@ body {
   width: 100%;
   height: 100%;
   font-family: 'Nunito', sans-serif;
-  background: #f9d0d8;
+  background: #e8b4c4;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -20,22 +20,18 @@ body {
 
 .wrapper {
   position: relative;
-  width: 100%;
-  max-width: 750px;
-  margin: 0 auto;
-  /* La imagen tiene ratio 1135:1600 = 0.709. Al darle min-height cubrimos toda la pantalla */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  width: 92%;
+  max-width: 480px;
+  margin: 2vh auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(180, 60, 100, 0.2);
 }
 
 .bg-image {
   display: block;
   width: 100%;
   height: auto;
-  min-height: 100vh;
-  object-fit: cover;
-  object-position: center top;
   z-index: 0;
 }
 
@@ -121,19 +117,10 @@ body {
 }
 
 /* ── PC ── */
-@media (min-width: 768px) {
-  body {
-    padding: 20px 0;
-  }
-
+@media (min-width: 600px) {
   .wrapper {
-    border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(200, 80, 120, 0.25);
-    overflow: hidden;
-    min-height: unset;
-  }
-
-  .bg-image {
-    min-height: unset;
+    width: 85%;
+    max-width: 500px;
+    margin: 3vh auto;
   }
 }
