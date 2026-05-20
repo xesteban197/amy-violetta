@@ -49,7 +49,7 @@ body {
 /* Imagen 1135x1600: botón original está top ~79%, centrado, ancho ~38% de la imagen */
 .confirm-btn {
   position: absolute;
-  top: 80.5%;
+  top: 82%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
