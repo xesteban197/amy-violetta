@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Nunito', sans-serif;
+  background: #f9d0d8;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+/* ── Contenedor centrado ── */
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 750px;
+  /* punto medio entre 100% y 480px */
+  margin: 0 auto;
+}
+
+/* ── Imagen ocupa todo el ancho del wrapper, altura natural ── */
+.bg-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+/* ── Overlay suave ── */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 220, 230, 0.08);
+  z-index: 1;
+}
+
+/* ── Botón confirmar ── */
+.confirm-btn {
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  background: linear-gradient(135deg, #f78fac, #e85c8a);
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+
+  box-shadow: 0 6px 24px rgba(232, 92, 138, 0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+.confirm-btn:hover {
+  transform: translateX(-50%) scale(1.06);
+  box-shadow: 0 10px 32px rgba(232, 92, 138, 0.6);
+  animation: none;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 6px 24px rgba(232, 92, 138, 0.45);
+  }
+
+  50% {
+    box-shadow: 0 8px 36px rgba(232, 92, 138, 0.75);
+  }
+}
+
+/* ── Partículas flotantes ── */
+.sparkle {
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+  animation: floatUp linear infinite;
+  opacity: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ── PC: tarjeta con sombra ── */
+@media (min-width: 768px) {
+  body {
+    padding: 20px 0;
+  }
+
+  .wrapper {
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(200, 80, 120, 0.25);
+    overflow: hidden;
+  }
+}
