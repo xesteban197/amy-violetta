@@ -18,14 +18,14 @@ body {
   overflow-y: auto;
 }
 
-/* Mantiene MISMA escala en desktop y mobile */
+/* WEB ORIGINAL intacta */
 .wrapper {
   position: relative;
-  width: 520px;
-  max-width: 100%;
+  width: 85%;
+  max-width: 520px;
   margin: 24px auto;
   border-radius: 16px;
-  overflow: visible;
+  overflow: hidden;
   box-shadow: 0 8px 40px rgba(180, 60, 100, 0.25);
   flex-shrink: 0;
 }
@@ -34,11 +34,15 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  z-index: 0;
 }
 
 .overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(255, 220, 230, 0.05);
   z-index: 1;
 }
@@ -49,15 +53,15 @@ body {
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-
   width: 38%;
   padding: 2.8% 0;
 
   background: #ee7fa3;
   color: #fff;
+  opacity: 1;
 
   font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -65,19 +69,21 @@ body {
   border: none;
   border-radius: 50px;
   cursor: pointer;
-
   display: flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
 
   box-shadow: 0 2px 10px rgba(200, 80, 120, 0.3);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s;
 }
 
 .confirm-btn:hover,
 .confirm-btn:active,
 .confirm-btn:focus {
+  background: #ee7fa3;
+  color: #fff;
+  opacity: 1;
   transform: translateX(-50%) scale(1.03);
   outline: none;
 }
@@ -110,15 +116,16 @@ body {
   }
 }
 
-/* SOLO escala, no reacomoda */
-@media (max-width: 520px) {
+/* SOLO corrige mobile */
+@media (max-width: 768px) {
   .wrapper {
     width: 100%;
-    margin: 0 auto;
-    border-radius: 0;
+    max-width: 520px;
+    margin: 24px auto;
   }
 
   .confirm-btn {
-    font-size: 0.9rem;
+    width: 38%;
+    font-size: clamp(0.7rem, 2.8vw, 1rem);
   }
 }
